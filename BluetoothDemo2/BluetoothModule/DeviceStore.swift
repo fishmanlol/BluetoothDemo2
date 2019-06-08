@@ -10,7 +10,7 @@ import Foundation
 
 struct DeviceStore {
     
-    private var devices: [Device] = [] {
+    var devices: [Device] = [] {
         didSet {
             NotificationCenter.default.post(name: Constant.NotificationName.deviceDidChanged, object: nil)
             save()
@@ -32,9 +32,9 @@ struct DeviceStore {
     }
     
     mutating func remove(_ device: Device) {
-        guard let index = devices.firstIndex(of: device) else { return }
-        
-        devices.remove(at: index)
+        if let index = devices.firstIndex(of: device) {
+            devices.remove(at: index)
+        }
     }
     
     private func retrieve() -> [Device] {

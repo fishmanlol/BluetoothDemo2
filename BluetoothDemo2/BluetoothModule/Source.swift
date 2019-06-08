@@ -11,15 +11,15 @@ import Foundation
 struct Source {
     let name: String
     let type: SourceType
-    var data: [Any] = []
+    var latest: Any?
     
-    init(name: String, type: SourceType) {
-        self.name = name
+    init(type: SourceType) {
         self.type = type
+        self.name = type.rawValue
     }
     
     enum SourceType: String, Codable {
-        case temperature
+        case temperature, hearRate, oxygen
     }
 }
 
