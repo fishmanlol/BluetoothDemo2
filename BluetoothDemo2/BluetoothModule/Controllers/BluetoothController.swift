@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class BluetoothController: UIViewController {
     
@@ -46,6 +47,13 @@ extension BluetoothController {
         tableView.register(DeviceCell.self, forCellReuseIdentifier: "DeviceCell")
         self.tableView = tableView
         view.addSubview(tableView)
+        
+        tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
+            self?.vm.restartScan()
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (_) in
+                self?.tableView.mj_header.endRefreshing()
+            })
+        })
     }
 }
 
@@ -78,6 +86,12 @@ extension BluetoothController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         vm.select(at: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            vm.remove(at: indexPath)
+        }
     }
 }
 

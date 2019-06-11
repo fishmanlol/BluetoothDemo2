@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		20FB7CDBD27383312D0056C1 /* Pods_BluetoothDemo2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 798369AA76AB90A4F9490C41 /* Pods_BluetoothDemo2.framework */; };
+		8E16EE3622AECC2300BC834A /* PulseOximeterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16EE3522AECC2300BC834A /* PulseOximeterData.swift */; };
+		8E16EE3A22AECF6A00BC834A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16EE3922AECF6A00BC834A /* Date.swift */; };
+		8E16EE3C22AF0C9700BC834A /* EarThermometerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16EE3B22AF0C9700BC834A /* EarThermometerData.swift */; };
+		8E16EE3E22AF170900BC834A /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16EE3D22AF170900BC834A /* Double.swift */; };
+		8E16EE4022AF2CC200BC834A /* BloodPressureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16EE3F22AF2CC200BC834A /* BloodPressureData.swift */; };
 		8E556E4E22AB12DE001F3F64 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E556E4B22AB12DE001F3F64 /* UIImage.swift */; };
 		8E556E4F22AB12DE001F3F64 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E556E4C22AB12DE001F3F64 /* UIColor.swift */; };
 		8E556E5022AB12DE001F3F64 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E556E4D22AB12DE001F3F64 /* UIFont.swift */; };
@@ -33,6 +38,11 @@
 		0E374E1AE5877498C8D682C4 /* Pods-BluetoothDemo2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluetoothDemo2.release.xcconfig"; path = "Pods/Target Support Files/Pods-BluetoothDemo2/Pods-BluetoothDemo2.release.xcconfig"; sourceTree = "<group>"; };
 		4D118FCBF26483CD56A1CC67 /* Pods-BluetoothDemo2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluetoothDemo2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BluetoothDemo2/Pods-BluetoothDemo2.debug.xcconfig"; sourceTree = "<group>"; };
 		798369AA76AB90A4F9490C41 /* Pods_BluetoothDemo2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BluetoothDemo2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E16EE3522AECC2300BC834A /* PulseOximeterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseOximeterData.swift; sourceTree = "<group>"; };
+		8E16EE3922AECF6A00BC834A /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		8E16EE3B22AF0C9700BC834A /* EarThermometerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarThermometerData.swift; sourceTree = "<group>"; };
+		8E16EE3D22AF170900BC834A /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		8E16EE3F22AF2CC200BC834A /* BloodPressureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressureData.swift; sourceTree = "<group>"; };
 		8E556E4B22AB12DE001F3F64 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		8E556E4C22AB12DE001F3F64 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		8E556E4D22AB12DE001F3F64 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
@@ -84,12 +94,43 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8E16EE3122AEBDAF00BC834A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8EAE0E2922A83331009417D0 /* Device.swift */,
+				8EAE0E2722A830FE009417D0 /* DeviceStore.swift */,
+				8EA7069D22A838C0000156E2 /* Source.swift */,
+				8E16EE3522AECC2300BC834A /* PulseOximeterData.swift */,
+				8E16EE3B22AF0C9700BC834A /* EarThermometerData.swift */,
+				8E16EE3F22AF2CC200BC834A /* BloodPressureData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8E16EE3222AEBDD100BC834A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8EAE0E2322A82EEF009417D0 /* BluetoothController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8E16EE3322AEBDEA00BC834A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8EAE0E2522A82FC2009417D0 /* BluetoothViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		8E556E5122AB12E2001F3F64 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				8E556E4C22AB12DE001F3F64 /* UIColor.swift */,
 				8E556E4B22AB12DE001F3F64 /* UIImage.swift */,
 				8E556E4D22AB12DE001F3F64 /* UIFont.swift */,
+				8E16EE3922AECF6A00BC834A /* Date.swift */,
+				8E16EE3D22AF170900BC834A /* Double.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -155,6 +196,7 @@
 		8EAE0E2B22A8334A009417D0 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				8EA7069F22A83C39000156E2 /* Constant.swift */,
 				8E9ED80522A5D43B0026DD24 /* AppDelegate.swift */,
 				8E9ED80922A5D43B0026DD24 /* Main.storyboard */,
 				8E9ED80C22A5D43C0026DD24 /* Assets.xcassets */,
@@ -168,13 +210,10 @@
 			isa = PBXGroup;
 			children = (
 				8E556E5122AB12E2001F3F64 /* Extension */,
-				8EAE0E2322A82EEF009417D0 /* BluetoothController.swift */,
-				8EAE0E2522A82FC2009417D0 /* BluetoothViewModel.swift */,
+				8E16EE3322AEBDEA00BC834A /* ViewModels */,
 				8EA706A522A89417000156E2 /* View */,
-				8EAE0E2922A83331009417D0 /* Device.swift */,
-				8EAE0E2722A830FE009417D0 /* DeviceStore.swift */,
-				8EA7069D22A838C0000156E2 /* Source.swift */,
-				8EA7069F22A83C39000156E2 /* Constant.swift */,
+				8E16EE3222AEBDD100BC834A /* Controllers */,
+				8E16EE3122AEBDAF00BC834A /* Models */,
 			);
 			path = BluetoothModule;
 			sourceTree = "<group>";
@@ -279,12 +318,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BluetoothDemo2/Pods-BluetoothDemo2-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,15 +341,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EAE0E2622A82FC2009417D0 /* BluetoothViewModel.swift in Sources */,
+				8E16EE3C22AF0C9700BC834A /* EarThermometerData.swift in Sources */,
 				8EAE0E2422A82EEF009417D0 /* BluetoothController.swift in Sources */,
 				8EA7069E22A838C0000156E2 /* Source.swift in Sources */,
 				8EA706A722A89534000156E2 /* DeviceCell.swift in Sources */,
+				8E16EE4022AF2CC200BC834A /* BloodPressureData.swift in Sources */,
 				8EA706A022A83C39000156E2 /* Constant.swift in Sources */,
 				8EAE0E2A22A83331009417D0 /* Device.swift in Sources */,
+				8E16EE3622AECC2300BC834A /* PulseOximeterData.swift in Sources */,
 				8E556E5022AB12DE001F3F64 /* UIFont.swift in Sources */,
 				8E556E4E22AB12DE001F3F64 /* UIImage.swift in Sources */,
 				8EAE0E2822A830FE009417D0 /* DeviceStore.swift in Sources */,
 				8E9ED80622A5D43B0026DD24 /* AppDelegate.swift in Sources */,
+				8E16EE3A22AECF6A00BC834A /* Date.swift in Sources */,
+				8E16EE3E22AF170900BC834A /* Double.swift in Sources */,
 				8E556E4F22AB12DE001F3F64 /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

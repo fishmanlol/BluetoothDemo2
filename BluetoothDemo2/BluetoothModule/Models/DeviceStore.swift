@@ -25,16 +25,24 @@ struct DeviceStore {
         return devices.contains(device)
     }
     
+    func findDeviceIndex(peripheral: CBPeripheral) -> Int? {
+        guard let name = peripheral.name, let device = Device(name: name), let index = devices.firstIndex(of: device) else {
+            return nil
+        }
+        return index
+    }
+    
     mutating func add(_ device: Device) {
-        if !devices.contains(device) {
-            devices.append(device)
+        if let index = devices.firstIndex(where: { $0.type == device.type }) {
+            devices.remove(at: index)
+            devices.insert(device, at: index)
+        } else {
+            devices.insert(device, at: 0)
         }
     }
     
-    mutating func remove(_ device: Device) {
-        if let index = devices.firstIndex(of: device) {
-            devices.remove(at: index)
-        }
+    mutating func remove(at index: Int) {
+        devices.remove(at: index)
     }
     
     private func retrieve() -> [Device] {

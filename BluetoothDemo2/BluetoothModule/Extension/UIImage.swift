@@ -15,6 +15,10 @@ extension UIImage {
         return UIImage(named: "ear_thermometer")
     }
     
+    static var earThermometerDisconnected: UIImage? {
+        return UIImage(named: "ear_thermometer_disconnected")
+    }
+    
     static var pulseOximeter: UIImage? {
         return UIImage(named: "pulse_oximeter")
     }
@@ -23,4 +27,19 @@ extension UIImage {
         return UIImage(named: "pulse_oximeter_disconnected")
     }
     
+    static var bloodPressure: UIImage? {
+        return UIImage(named: "blood_pressure")
+    }
+    
+    static var bloodPressureDisconnected: UIImage? {
+        return UIImage(named: "blood_pressure_disconnected")
+    }
+    
+    static var scale: UIImage? {
+        return UIImage(named: "scale")
+    }
+    
+    static var scaleDisconnected: UIImage? {
+        return UIImage(named: "scale_disconnected")
+    }
 }

@@ -12,6 +12,7 @@ struct Source {
     let name: String
     let type: SourceType
     var latest: Any?
+    var latestTime: Date?
     
     init(type: SourceType) {
         self.type = type
@@ -19,7 +20,7 @@ struct Source {
     }
     
     enum SourceType: String, Codable {
-        case temperature, hearRate, oxygen
+        case temperature, pulse, oxygen
     }
 }
 

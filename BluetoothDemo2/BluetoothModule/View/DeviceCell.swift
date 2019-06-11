@@ -20,6 +20,8 @@ class DeviceCell: UITableViewCell {
     weak var deviceNoLabel2: UILabel!
     weak var indicator1: UIActivityIndicatorView!
     weak var indicator2: UIActivityIndicatorView!
+    weak var errorLabel1: UILabel!
+    weak var errorLabel2: UILabel!
     weak var timeLabel: UILabel!
     weak var topDisplayLabel: UILabel!
     weak var middleDisplayLabel: UILabel!
@@ -86,54 +88,80 @@ class DeviceCell: UITableViewCell {
         //components with data
         let nameLabel1 = UILabel()
         nameLabel1.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        nameLabel1.font = UIFont.systemFont(ofSize: 24, weight: .regular)
+        nameLabel1.textColor = UIColor(r: 72, g: 72, b: 72)
         self.deviceNameLabel1 = nameLabel1
         contentView.addSubview(nameLabel1)
         
         let deviceNoLabel1 = UILabel()
+        deviceNoLabel1.textColor = .white
+        deviceNoLabel1.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        deviceNoLabel1.backgroundColor = UIColor.orange
         self.deviceNoLabel1 = deviceNoLabel1
         contentView.addSubview(deviceNoLabel1)
         
         let indicator1 = UIActivityIndicatorView()
-        indicator1.isHidden = true
         indicator1.hidesWhenStopped = true
         indicator1.style = .gray
         self.indicator1 = indicator1
         contentView.addSubview(indicator1)
         
+        let errorLabel1 = UILabel()
+        errorLabel1.font = UIFont.systemFont(ofSize: 12)
+        errorLabel1.textColor = UIColor.defaultRed
+        self.errorLabel1 = errorLabel1
+        contentView.addSubview(errorLabel1)
+        
         let timeLabel = UILabel()
+        timeLabel.font = UIFont.systemFont(ofSize: 12)
+        timeLabel.textColor = UIColor.defaultGray
         self.timeLabel = timeLabel
         contentView.addSubview(timeLabel)
         
         let topDisplayLabel = UILabel()
+        topDisplayLabel.font = UIFont.systemFont(ofSize: 14)
+        topDisplayLabel.textColor = UIColor.defaultGray
         self.topDisplayLabel = topDisplayLabel
         contentView.addSubview(topDisplayLabel)
         
         let middleDisplayLabel = UILabel()
+        middleDisplayLabel.font = UIFont.systemFont(ofSize: 14)
+        middleDisplayLabel.textColor = UIColor.defaultGray
         self.middleDisplayLabel = middleDisplayLabel
         contentView.addSubview(middleDisplayLabel)
         
         let bottomDisplayLabel = UILabel()
+        bottomDisplayLabel.font = UIFont.systemFont(ofSize: 14)
+        bottomDisplayLabel.textColor = UIColor.defaultGray
         self.bottomDisplayLabel = bottomDisplayLabel
         contentView.addSubview(bottomDisplayLabel)
         
         //components without data
         let nameLabel2 = UILabel()
-        nameLabel2.font = UIFont.systemFont(ofSize: 20, weight: .regular)
+        nameLabel2.font = UIFont.systemFont(ofSize: 24, weight: .regular)
         nameLabel2.textColor = UIColor(r: 72, g: 72, b: 72)
         nameLabel2.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         self.deviceNameLabel2 = nameLabel2
         contentView.addSubview(nameLabel2)
         
         let deviceNoLabel2 = UILabel()
+        deviceNoLabel2.textColor = .white
+        deviceNoLabel2.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        deviceNoLabel2.backgroundColor = UIColor.orange
         self.deviceNoLabel2 = deviceNoLabel2
         contentView.addSubview(deviceNoLabel2)
         
         let indicator2 = UIActivityIndicatorView()
-        indicator2.isHidden = true
         indicator2.hidesWhenStopped = true
         indicator2.style = .gray
         self.indicator2 = indicator2
         contentView.addSubview(indicator2)
+        
+        let errorLabel2 = UILabel()
+        errorLabel2.font = UIFont.systemFont(ofSize: 12)
+        errorLabel2.textColor = UIColor.defaultRed
+        self.errorLabel2 = errorLabel2
+        contentView.addSubview(errorLabel2)
     }
     
     override func layoutSubviews() {
@@ -156,7 +184,7 @@ class DeviceCell: UITableViewCell {
         //with data
         topDisplayLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(6)
-            make.right.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(-20)
         }
         
         middleDisplayLabel.snp.makeConstraints { (make) in
@@ -171,12 +199,13 @@ class DeviceCell: UITableViewCell {
         
         deviceNameLabel1.snp.makeConstraints { (make) in
             make.left.equalTo(separatorLine)
-            make.bottom.equalTo(topDisplayLabel)
+            make.top.equalToSuperview().offset(6)
         }
         
         deviceNoLabel1.snp.makeConstraints { (make) in
             make.left.equalTo(deviceNameLabel1.snp.right).offset(6)
-            make.bottom.equalTo(deviceNameLabel1)
+            make.firstBaseline.equalTo(deviceNameLabel1)
+            make.height.equalTo(12)
             make.right.lessThanOrEqualTo(topDisplayLabel.snp.left).offset(-6)
         }
         
@@ -186,6 +215,11 @@ class DeviceCell: UITableViewCell {
         }
         
         indicator1.snp.makeConstraints { (make) in
+            make.left.equalTo(separatorLine).offset(12)
+            make.bottom.equalToSuperview().offset(-6)
+        }
+        
+        errorLabel1.snp.makeConstraints { (make) in
             make.left.equalTo(separatorLine)
             make.bottom.equalToSuperview().offset(-6)
         }
@@ -196,7 +230,18 @@ class DeviceCell: UITableViewCell {
             make.centerY.equalToSuperview()
         }
         
+        deviceNoLabel2.snp.makeConstraints { (make) in
+            make.left.equalTo(deviceNameLabel2.snp.right).offset(6)
+            make.firstBaseline.equalTo(deviceNameLabel2)
+            make.height.equalTo(12)
+        }
+        
         indicator2.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-20)
+            make.centerY.equalToSuperview()
+        }
+        
+        errorLabel2.snp.makeConstraints { (make) in
             make.right.equalToSuperview().offset(-20)
             make.centerY.equalToSuperview()
         }
